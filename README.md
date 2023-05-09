@@ -1,26 +1,25 @@
-## Simple Elastic PDF Search
+# Simple Elastic PDF Search
 
 <p align="start">
   <img width="220px" src="https://mkyong.com/wp-content/uploads/2017/03/spring-data-elasticsearch-logo.png" alt="Spring Data Elasticsearch Logo">
 </p>
 
-### Introduction
+## Introduction
 <p >
   This project allows users to upload PDF documents, extract the content from each page using the iText library, and index the content as a single document in Elasticsearch, making it searchable and easily retrievable using parameters such as page number and search term. 
 </p>
 
-### Motivation
+## Motivation
 > " Working with PDF files in Elasticsearch can be challenging due to the lack of built-in support for extracting page numbers and their content. Although Elasticsearch's native PDF processor can transform PDF files into base64 and ingest its, it does not provide accurate information about the number of pages, making it difficult to perform full-text searches on specific pages. Using the iText library can solve this problem by allowing extraction of content from specific pages, which can be indexed in Elasticsearch. This project simplifies indexing of PDF content, providing a simple API that allows users to upload PDF files, extract the content of each page using the iText library, and index their content as a single document in Elasticsearch, making it searchable and easily retrievable through parameters such as page number and search term. " <b> - Marcelo Penha.</b>
 
-### Technologies 
-
+## Technologies
 The project was developed using the following technologies:
 
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Spring Data Elasticsearch](https://spring.io/projects/spring-data-elasticsearch)
 - [iText Library](https://itextpdf.com/)
 
-### Configuration
+## Configuration
 
 To run the project, Elasticsearch must be installed on the machine. It can be downloaded from the official website: https://www.elastic.co/downloads/elasticsearch.
 
@@ -34,9 +33,7 @@ spring:
       cluster-nodes: localhost:9300
 ```
 
-
-
-> <i> obs: If necessary, these properties can be changed according to the Elasticsearch configuration on the machine. </i>
+> <i> obs: If necessary, these properties can be changed according to the Elasticsearch configuration on your machine. </i>
 
 ## Endpoints
 
@@ -47,13 +44,13 @@ The API has the following endpoints:
 | `/api/index` | POST | PDF file | - | Indexes the pages of the provided PDF file in Elasticsearch. |
 | `/api/search` | GET | - | `page`: page number (starting from 0).<br>`size`: number of results per page.<br>`term`: search term. | Searches for a term in all indexed pages. Returns paginated results. |
 
-### Indexing a PDF document
+## Indexing a PDF document
 
 **Endpoint**: `POST /api/index`
 
 This endpoint receives a PDF file and indexes it in Elasticsearch, separating each page into an individual document. The PDF file must be sent as a `multipart/form-data`, using the key `file`.
 
-### Searching for a term in all pages
+## Searching for a term in all pages
 
 **Endpoint**: `GET /api/search`
 
