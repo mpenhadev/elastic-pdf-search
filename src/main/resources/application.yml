@@ -1,0 +1,28 @@
+server:
+  port: 8083
+spring:
+  jmx:
+    enabled: false
+  main:
+    lazy-initialization: true
+  application:
+      name: search-service
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  elasticsearch:
+    rest:
+      uri: c7435f9167ab4bd3aa07aa19386858b8.us-central1.gcp.cloud.es.io:9243
+      connection-timeout: 3000
+      read-timeout: 1m
+      password: PNHSaAheUE7CICbLeDOkQTUF
+      username: elastic
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          convert:
+            CustomConversions: ERROR
