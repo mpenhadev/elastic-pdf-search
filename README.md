@@ -58,13 +58,40 @@ This endpoint receives a PDF file and indexes it in Elasticsearch, separating ea
 
 This endpoint searches for a term in all indexed pages in Elasticsearch. It is possible to paginate the results using the `page` and `size` parameters, which respectively define the desired page and the number of results per page. The searched term must be sent in the `term` parameter.
 
-This endpoint returns a JSON object containing the search results. Each object in the result represents a page of the document, containing the following information:
+This endpoint returns a JSON object containing the search results.Each object in the result represents a page of the document, containing the following information:
+
+```
+{
+  "documentId": {elasticseach document id}
+  "page": {pdf page}
+  "contet": {the entire content of the page}
+  "fragments": {Array of fragments containing the searched term}
+},
+```
+
+> Here is an example of request for search inside index.
+
+```curl
+curl -X GET "http://{host}/api/search?term=foo"
+```
+> And that's the response:
 
 ```json
 {
   "page": 1,
   "contet": "Pdf page content",
-  "fragments": [ "Page <em>content</em>" ]
+  "fragments": [ 
+      "Lorem ipsum dolor sit amet, consectetur adipiscing <em>foo</em>",
+      "elit. In dictum sem eu augue tincidunt <em>foo</em> tempus. Vestibulum ante ipsum"
+  ]
+},
+{
+  "page": 2,
+  "contet": "Pdf page content",
+  "fragments": [ 
+      "Lorem ipsum dolor sit amet, consectetur adipiscing <em>foo</em>",
+      "elit. In dictum sem eu augue tincidunt <em>foo</em> tempus. Vestibulum ante ipsum"
+  ]
 }
 ```
 ### Author
