@@ -19,7 +19,6 @@ public class ElasticsearchClientConfig extends AbstractElasticsearchConfiguratio
 
     @Value("${spring.elasticsearch.rest.uri}")
     private String HOST_URL_CLOUD;
-
     
     @Value("${spring.elasticsearch.rest.username}")
     private String USERNAME_ELASTIC;
