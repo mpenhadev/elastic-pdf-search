@@ -13,8 +13,7 @@ This simple API allows users to upload PDF documents and extract the content fro
 Marcelo Penha
 
 ## Motivation
->  Working with PDF files in Elasticsearch can be challenging due to the lack of built-in support for extracting page numbers and their content. Although Elasticsearch's native PDF processor can transform PDF files into base64 and ingest its, it does not provide accurate information about the number of pages, making it difficult to perform full-text and retrieve good responses. The iText library allow us to extract information like page content and its page number, which can be indexed in Elasticsearch. 
-
+>  Working with PDF files in Elasticsearch can be challenging due to the lack of built-in support for extracting page numbers and their content. Although Elasticsearch's native PDF processor can transform PDF files into base64 and ingest its, it does not provide accurate information about the number of pages, making it difficult to perform full-text and retrieve good results. This solution allows us to obtain important information about the processed PDF, such as the total number of pages in the document, the page number being processed, and its content, making it possible to create an elasticsearch document with these fields, simplifying the querying process.
 
 #### Why extract page contents and index?
 
