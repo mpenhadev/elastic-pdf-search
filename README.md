@@ -6,7 +6,7 @@
 
 ## Introduction
 <p >
-This simple API allows users to upload PDF documents and extract the content from each page using the iText library. This way, it is possible to index the page content as a single document in Elasticsearch, making it searchable and easily retrievable using parameters such as page number and search term.
+This simple API allows users to upload PDF documents, extract the content from each page, and index each page as a separate Elasticsearch document. It facilitates the querying process and returns a JSON with the search results for a term within the text content. Each JSON element will contain the page where that term was found and will also highlight the fragment where the term is contained on the page content.
 </p>
 
 ### Author
