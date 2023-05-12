@@ -6,7 +6,7 @@
 
 ## Introduction
 <p >
-This simple API allows users to upload PDF documents, extract the content from each page, and index each page as a separate Elasticsearch document. It facilitates the querying process and returns a JSON with the search results for a term within the text content. Each JSON element will contain the page where that term was found and will also highlight the fragment where the term is contained on the page content.
+This simple API allows users to upload PDF documents, extract the content from each page, and index each page as a separate Elasticsearch document. It simplifies the querying process and returns a JSON with the search results for a term within the text content. Each JSON element will contain the page where the term was found and will also highlight the fragment where the term is contained within the page content.
 </p>
 
 ### Author
